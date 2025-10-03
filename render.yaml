@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: yasha-bot
+    env: python
+    plan: free
+    buildCommand: "pip install --no-cache-dir --upgrade -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
